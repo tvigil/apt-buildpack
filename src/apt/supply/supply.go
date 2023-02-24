@@ -48,6 +48,15 @@ func (s *Supplier) Run() error {
 		return err
 	}
 
+	ls $BUILD_DIR
+	echo "----"
+	ls /tmp/app/instantclient
+	echo "----"
+	echo "-----> Build Dir: " $BUILD_DIR
+	echo "-----> Cache Dir: " $CACHE_DIR
+	echo "-----> Output Dir: " $output_dir
+	echo "-----> Stager Build Dir: " stager.BuildDir()
+	
 	if s.Apt.HasKeys() {
 		s.Log.BeginStep("Adding apt keys")
 		if err := s.Apt.AddKeys(); err != nil {
