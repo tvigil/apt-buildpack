@@ -66,6 +66,8 @@ func main() {
 		logger.Error("Unable to initialize apt package: %s", err.Error())
 		os.Exit(13)
 	}
+	
+	logger.Info("---> " + stager.BuildDir());
 
 	supplier := supply.New(stager, a, logger)
 
