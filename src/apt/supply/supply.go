@@ -48,8 +48,6 @@ func (s *Supplier) Run() error {
 		return err
 	}
 
-	s.Log.BeginStep("--> Stager Build Dir: " + s.Stager.BuildDir())
-	
 	if s.Apt.HasKeys() {
 		s.Log.BeginStep("Adding apt keys")
 		if err := s.Apt.AddKeys(); err != nil {
